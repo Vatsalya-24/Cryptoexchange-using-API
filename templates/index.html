@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cryptocurrency Exchange</title>
+</head>
+<body>
+    <h1>Cryptocurrency Exchange</h1>
+    <form action="/exchange" method="post">
+        <label for="from_symbol">From:</label>
+        <select name="from_symbol" id="from_symbol">
+            {% for symbol in supported_symbols %}
+                <option value="{{ symbol }}">{{ symbol }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="to_symbol">To:</label>
+        <select name="to_symbol" id="to_symbol">
+            {% for symbol in supported_symbols %}
+                <option value="{{ symbol }}">{{ symbol }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="amount">Amount:</label>
+        <input type="text" name="amount" id="amount" required>
+
+        <input type="submit" value="Exchange">
+    </form>
+</body>
+</html>
